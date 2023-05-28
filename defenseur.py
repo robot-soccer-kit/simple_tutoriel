@@ -13,7 +13,7 @@ with connexion():
         print(f"Position de la balle {balle_x}, {balle_y}")
         
         # Le robot se déplace au même x que la balle
-        deplacer(balle_x, 0, 0, attendre=False)
+        deplacer(balle_x, 0, 0, attendre_arrivee=False)
         
         # Si la balle est à gauche, le robot sera
         # vert. Sinon il sera bleu

@@ -33,16 +33,13 @@ def utiliser(nom: str):
         print(f"Robot inconnu: {nom}, robots disponibles: {', '.join(robots.keys())}")
         exit()
         
-def deplacer(x: float, y:float, alpha: float, attendre: bool = True):
-    global robot
-
-    robot.goto((x, y, math.radians(alpha)), wait=attendre)
+def deplacer(x: float, y:float, alpha: float, attendre_arrivee: bool = True):
+    robot.goto((x, y, math.radians(alpha)), wait=attendre_arrivee)
 
 def teleporter_balle(x: float, y: float):
     client.teleport_ball(x, y)
 
 def definir_couleur(couleur: str):
-    global robot
     colors = {
         "rouge": (255, 0, 0),
         "vert": (0, 255, 0),
