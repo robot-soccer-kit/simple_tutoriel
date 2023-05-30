@@ -15,12 +15,15 @@ with connexion():
         # Le robot se déplace au même x que la balle
         deplacer(balle_x, 0, 0, attendre_arrivee=False)
         
-        # Si la balle est à gauche, le robot sera
-        # vert. Sinon il sera bleu
-        if balle_x < 0:
+        # Si la balle est à gauche, le robot sera vert
+        # si elle est au centre, il sera jaune,
+        # si elle est à droite, il sera rouge
+        if balle_x < -0.3:
             definir_couleur("vert")
+        elif balle_x < 0.3:
+            definir_couleur("jaune")
         else:
-            definir_couleur("bleu")
+            definir_couleur("rouge")
         
         # Attendre un peu
         attendre()
